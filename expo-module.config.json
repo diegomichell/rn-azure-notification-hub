@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android"],
+  "apple": {
+    "modules": ["AzureNotificationHubModule"]
+  },
+  "android": {
+    "modules": ["com.rnazurenotificationhub.AzureNotificationHubModule"]
+  }
+}
