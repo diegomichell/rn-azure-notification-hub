@@ -62,7 +62,7 @@ jobs:
         env:
           CI: 'true'
 
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v6
 
       - name: Assemble the module
         run: ./gradlew :rn-azure-notification-hub:assembleDebug --no-daemon
