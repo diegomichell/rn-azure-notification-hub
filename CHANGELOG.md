@@ -6,9 +6,13 @@ All notable changes to this project are documented here. The format follows
 
 ## Unreleased
 
-## 0.1.0
+## 0.1.1
 
 Initial release.
+
+> Published as 0.1.1 rather than 0.1.0: an unrelated package briefly held this name on npm in
+> March 2024 and published 0.1.0 before unpublishing it, and npm permanently burns an unpublished
+> version number.
 
 ### Added
 

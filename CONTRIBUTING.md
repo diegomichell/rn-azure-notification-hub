@@ -5,7 +5,7 @@ Thanks for taking the time. Bug reports, docs fixes, and pull requests are all w
 ## Getting set up
 
 ```sh
-git clone https://github.com/diegomichel/rn-azure-notification-hub.git
+git clone https://github.com/diegomichell/rn-azure-notification-hub.git
 cd rn-azure-notification-hub
 npm install
 npm run build          # compiles src/ -> build/ and plugin/src -> plugin/build (watches in a TTY)

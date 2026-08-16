@@ -1,7 +1,7 @@
 # rn-azure-notification-hub
 
 [![npm](https://img.shields.io/npm/v/rn-azure-notification-hub.svg)](https://www.npmjs.com/package/rn-azure-notification-hub)
-[![CI](https://github.com/diegomichel/rn-azure-notification-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/diegomichel/rn-azure-notification-hub/actions/workflows/ci.yml)
+[![CI](https://github.com/diegomichell/rn-azure-notification-hub/actions/workflows/ci.yml/badge.svg)](https://github.com/diegomichell/rn-azure-notification-hub/actions/workflows/ci.yml)
 [![license](https://img.shields.io/npm/l/rn-azure-notification-hub.svg)](./LICENSE)
 
 An [Expo Module](https://docs.expo.dev/modules/overview/) that wraps Microsoft's official

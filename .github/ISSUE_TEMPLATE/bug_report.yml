@@ -6,7 +6,7 @@ body:
     attributes:
       value: |
         Before filing, please check the
-        [Troubleshooting section](https://github.com/diegomichel/rn-azure-notification-hub#troubleshooting)
+        [Troubleshooting section](https://github.com/diegomichell/rn-azure-notification-hub#troubleshooting)
         — the common causes (missing push entitlement, `google-services.json`, an FCM service
         conflict with another library) are covered there.
 

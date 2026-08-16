@@ -5,7 +5,7 @@
 Please **do not** open a public issue for a security problem.
 
 Report it privately through
-[GitHub Security Advisories](https://github.com/diegomichel/rn-azure-notification-hub/security/advisories/new),
+[GitHub Security Advisories](https://github.com/diegomichell/rn-azure-notification-hub/security/advisories/new),
 or by email to <diego.ivan.perez.michel@gmail.com>. Include:
 
 - what you found and how it can be reproduced,

@@ -1,6 +1,6 @@
 {
   "name": "rn-azure-notification-hub",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Native / Expo wrapper for the Azure Notification Hubs native iOS and Android SDKs",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -31,14 +31,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/diegomichel/rn-azure-notification-hub.git"
+    "url": "git+https://github.com/diegomichell/rn-azure-notification-hub.git"
   },
   "bugs": {
-    "url": "https://github.com/diegomichel/rn-azure-notification-hub/issues"
+    "url": "https://github.com/diegomichell/rn-azure-notification-hub/issues"
   },
-  "author": "Diego Michel <diego.ivan.perez.michel@gmail.com> (https://github.com/diegomichel)",
+  "author": "Diego Michel <diego.ivan.perez.michel@gmail.com> (https://github.com/diegomichell)",
   "license": "MIT",
-  "homepage": "https://github.com/diegomichel/rn-azure-notification-hub#readme",
+  "homepage": "https://github.com/diegomichell/rn-azure-notification-hub#readme",
   "files": [
     "android/build.gradle",
     "android/src",

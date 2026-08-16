@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     :tvos => '16.4'
   }
   s.swift_version  = '5.9'
-  s.source         = { git: 'https://github.com/diegomichel/rn-azure-notification-hub.git', tag: "v#{s.version}" }
+  s.source         = { git: 'https://github.com/diegomichell/rn-azure-notification-hub.git', tag: "v#{s.version}" }
   s.static_framework = true
 
   s.dependency 'ExpoModulesCore'
