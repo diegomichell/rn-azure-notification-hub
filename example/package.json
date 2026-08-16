@@ -1,5 +1,5 @@
 {
-  "name": "my-module-example",
+  "name": "rn-azure-notification-hub-example",
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {

@@ -1,0 +1,71 @@
+name: Bug report
+description: Something in the library does not behave as documented.
+labels: ['bug', 'needs triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing, please check the
+        [Troubleshooting section](https://github.com/diegomichel/rn-azure-notification-hub#troubleshooting)
+        — the common causes (missing push entitlement, `google-services.json`, an FCM service
+        conflict with another library) are covered there.
+
+        **Never paste a hub connection string, APNs key, or `google-services.json` into an issue.**
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you expected, and what you got instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: >
+        The smallest code that shows the problem, ideally a diff against the `example/` app.
+        Issues without a reproduction usually cannot be acted on.
+      render: tsx
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: Platforms
+      multiple: true
+      options:
+        - iOS device
+        - iOS simulator
+        - Android device
+        - Android emulator
+    validations:
+      required: true
+
+  - type: input
+    id: library-version
+    attributes:
+      label: rn-azure-notification-hub version
+      placeholder: 0.1.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Output of `npx expo-env-info` (or `npx react-native info` in a bare app).
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Native logs
+      description: >
+        Relevant output from Xcode's console or `adb logcat` (the Azure SDK logs under the `ANH`
+        tag on Android). Redact tokens and installation ids.
+      render: text

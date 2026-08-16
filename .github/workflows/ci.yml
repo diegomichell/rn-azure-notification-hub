@@ -1,0 +1,107 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  javascript:
+    name: Lint, types and tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build (type-checks src/ and plugin/)
+        run: npm run build
+        env:
+          CI: 'true'
+
+      - run: npm run lint
+
+      - run: npm test -- --ci --passWithNoTests
+        env:
+          CI: 'true'
+
+  android:
+    name: Android library
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm --prefix example ci
+
+      - name: Prebuild the example app
+        run: npx expo prebuild -p android --no-install
+        working-directory: example
+        env:
+          CI: 'true'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Assemble the module
+        run: ./gradlew :rn-azure-notification-hub:assembleDebug --no-daemon
+        working-directory: example/android
+
+  ios:
+    name: iOS module
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm --prefix example ci
+
+      - name: Prebuild the example app
+        run: npx expo prebuild -p ios --no-install
+        working-directory: example
+        env:
+          CI: 'true'
+
+      - name: Install pods
+        run: pod install
+        working-directory: example/ios
+
+      - name: Build the module
+        run: |
+          xcodebuild \
+            -project Pods/Pods.xcodeproj \
+            -target AzureNotificationHub \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            ONLY_ACTIVE_ARCH=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+        working-directory: example/ios

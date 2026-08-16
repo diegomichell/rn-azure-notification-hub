@@ -1,2 +1,26 @@
-<manifest>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <!--
+    Android 13+ requires this to post notifications. It is only declared here; the runtime prompt
+    is up to the app (see `requestPermissionsAsync`).
+  -->
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+  <application>
+    <!--
+      Installs a notification listener during Application startup so that pushes which start the
+      process are captured (and replayed to JavaScript) instead of crashing the SDK's
+      FirebaseMessagingService, which dereferences its listener without a null check.
+    -->
+    <provider
+      android:name="androidx.startup.InitializationProvider"
+      android:authorities="${applicationId}.androidx-startup"
+      android:exported="false"
+      tools:node="merge">
+      <meta-data
+        android:name="com.rnazurenotificationhub.AzureNotificationHubInitializer"
+        android:value="androidx.startup" />
+    </provider>
+  </application>
 </manifest>

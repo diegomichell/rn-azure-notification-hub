@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "my-module-example",
-    "slug": "my-module-example",
+    "name": "Azure Notification Hub Example",
+    "slug": "rn-azure-notification-hub-example",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,6 +22,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "../app.plugin.js",
+        {
+          "apsEnvironment": "development"
+        }
+      ]
+    ]
   }
 }

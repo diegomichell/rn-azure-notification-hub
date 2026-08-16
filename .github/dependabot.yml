@@ -1,0 +1,24 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    groups:
+      dev-dependencies:
+        dependency-type: development
+    ignore:
+      # These track the Expo SDK, not semver — bump them deliberately alongside a supported-SDK
+      # change rather than one package at a time.
+      - dependency-name: expo
+      - dependency-name: expo-modules-core
+      - dependency-name: react-native
+      - dependency-name: babel-preset-expo
+      - dependency-name: jest-expo
+      - dependency-name: '@expo/config-plugins'
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

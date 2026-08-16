@@ -20,7 +20,7 @@ config.resolver.nodeModulesPaths = [
 ];
 
 config.resolver.extraNodeModules = {
-  'my-module': '..',
+  'rn-azure-notification-hub': '..',
 };
 
 config.watchFolders = [path.resolve(__dirname, '..')];

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or usage help
+    url: https://github.com/diegomichel/rn-azure-notification-hub/discussions
+    about: Ask here rather than opening an issue.
+  - name: Azure Notification Hubs service or SDK bug
+    url: https://github.com/Azure/azure-notificationhubs-ios/issues
+    about: Problems inside Microsoft's SDKs or the hub itself belong upstream.
+  - name: Security vulnerability
+    url: https://github.com/diegomichel/rn-azure-notification-hub/security/advisories/new
+    about: Report privately — please do not open a public issue.

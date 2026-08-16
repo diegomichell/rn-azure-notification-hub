@@ -16,3 +16,15 @@ android {
     abortOnError false
   }
 }
+
+dependencies {
+  // The official Azure Notification Hubs client SDK for Android ("general" flavour: its
+  // NotificationListener hands us a platform-neutral NotificationMessage rather than a Firebase
+  // RemoteMessage). It transitively brings in firebase-messaging and Volley.
+  implementation 'com.microsoft.azure:notification-hubs-android-sdk:2.0.0'
+
+  // Used to install a notification listener during Application startup. Without one in place, a
+  // data-only push that starts the process crashes the SDK's FirebaseMessagingService before the
+  // JavaScript runtime has had a chance to register anything.
+  implementation 'androidx.startup:startup-runtime:1.2.0'
+}

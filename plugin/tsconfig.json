@@ -1,0 +1,28 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "lib": [
+      "esnext"
+    ],
+    "jsx": "preserve",
+    "types": [
+      "node"
+    ],
+    "outDir": "build",
+    "rootDir": "src",
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "tsBuildInfoFile": "./build/tsconfig.tsbuildinfo"
+  },
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "**/__mocks__/*",
+    "**/__tests__/*"
+  ]
+}

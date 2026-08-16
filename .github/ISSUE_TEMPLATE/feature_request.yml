@@ -1,0 +1,42 @@
+name: Feature request
+description: Something the native SDKs can do that this wrapper does not expose.
+labels: ['enhancement', 'needs triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This library aims to be a faithful wrapper. The strongest requests point at a specific
+        native API that has no JavaScript equivalent yet.
+
+        Out of scope by design: drawing notifications, and server-side hub operations that need a
+        `Manage`/`Send` policy.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the goal, not just the API you have in mind.
+    validations:
+      required: true
+
+  - type: textarea
+    id: native-api
+    attributes:
+      label: Corresponding native API
+      description: >
+        Which iOS (`MSNotificationHub`, delegates) and/or Android (`NotificationHub`, visitors)
+        API would back this? Note if only one platform has it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed JavaScript API
+      render: ts
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Current workaround
+      description: How are you handling it today, if at all?
